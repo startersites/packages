@@ -1,0 +1,13 @@
+{
+  "name": "@startersites/styles",
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "files": [
+    "css"
+  ],
+  "scripts": {
+    "build": "node-sass scss -o css"
+  }
+}

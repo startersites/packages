@@ -1,0 +1,15 @@
+{
+  "name": "@startersites/packages",
+  "version": "0.0.0",
+  "private": true,
+  "repository": "https://github.com/startersites/packages",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "Morgan Spencer",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.1",
+  "scripts": {
+    "build": "yarn workspaces foreach -ptR run build"
+  }
+}

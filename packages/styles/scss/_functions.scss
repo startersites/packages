@@ -1,0 +1,4 @@
+@function unit($num: 1) {
+  $value: $unit * $num;
+  @return $value;
+}

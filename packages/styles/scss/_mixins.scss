@@ -1,0 +1,70 @@
+@mixin screen-sm {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin font($type) {
+  @if $type == 'serif' {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  } @else if $type == 'mono' {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  } @else if $type == 'sans' {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  } @else {
+    @error "Unknown font type #{$type}.";
+  }
+}
+
+@mixin gap($axis, $size) {
+  > :not([hidden]) ~ :not([hidden]) {
+    @if $axis == 'x' {
+      margin-left: $size;
+    } @else if $axis == 'y' {
+      margin-top: $size;
+    } @else {
+      @error "Unknown axis #{$axis}.";
+    }
+  }
+}
+
+$font_sizes: (
+  'xs': (unit(3), unit(4)),
+  'sm': (unit(3.5), unit(5)),
+  'base': (unit(4), unit(6)),
+  'lg': (unit(4.5), unit(7)),
+  'xl': (unit(5), unit(7)),
+  '2xl': (unit(6), unit(8)),
+  '3xl': (unit(7.5), unit(9)),
+  '4xl': (unit(9), unit(10)),
+  '5xl': (unit(12), 1),
+  '6xl': (unit(15), 1),
+);
+
+@mixin text($size) {
+  $values: map-get($font_sizes, $size);
+
+  $font_size: nth($values, 1);
+  $line_height: nth($values, 2);
+
+  font-size: $font_size;
+  line-height: $line-height;
+}

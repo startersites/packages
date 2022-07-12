@@ -8,6 +8,6 @@
     "css"
   ],
   "scripts": {
-    "build": "node-sass scss -o css"
+    "build": "node-sass scss -o css --outputStyle=compressed"
   }
 }

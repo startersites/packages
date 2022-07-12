@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "repository": "https://github.com/startersites/packages",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@startersites"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -10,6 +13,7 @@
   "license": "MIT",
   "packageManager": "yarn@3.2.1",
   "scripts": {
-    "build": "yarn workspaces foreach -ptR run build"
+    "build": "yarn workspaces foreach -pt run build",
+    "publish": "yarn workspaces foreach -pt run publish"
   }
 }

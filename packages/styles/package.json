@@ -1,5 +1,10 @@
 {
   "name": "@startersites/styles",
+  "version": "0.1.0",
+  "repository": "https://github.com/startersites/packages",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "node-sass": "^7.0.1"
